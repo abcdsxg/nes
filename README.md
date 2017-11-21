@@ -59,13 +59,15 @@ Keyboard controls are indicated below.
 
 | Nintendo              | Emulator    |
 | --------------------- | ----------- |
-| Up, Down, Left, Right | Arrow Keys  |
 | Start                 | Enter       |
 | Select                | Right Shift |
-| A                     | Z           |
-| B                     | X           |
-| A (Turbo)             | A           |
-| B (Turbo)             | S           |
+| A  (player1)       | space           |
+| B  (player1)       | J          |
+| Up, Down, Left, Right | W S A D|
+| A (player2)        | 0           |
+| B (player2)        | 1           |
+| B  (player1)       | J          |
+| Up, Down, Left, Right | Arrow Keys|
 | Reset                 | R           |
 
 ### Mappers

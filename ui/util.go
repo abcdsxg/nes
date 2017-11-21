@@ -52,7 +52,7 @@ func readKey(window *glfw.Window, key glfw.Key) bool {
 
 func readKeys1(window *glfw.Window, turbo bool) [8]bool {
 	var result [8]bool
-	result[nes.ButtonA] = readKey(window, glfw.KeyK)
+	result[nes.ButtonA] = readKey(window, glfw.KeySpace)
 	result[nes.ButtonB] = readKey(window, glfw.KeyJ)
 	result[nes.ButtonSelect] = readKey(window, glfw.KeyRightShift)
 	result[nes.ButtonStart] = readKey(window, glfw.KeyEnter)
