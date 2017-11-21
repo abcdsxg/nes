@@ -132,9 +132,10 @@ func drawBuffer(window *glfw.Window) {
 
 func updateControllers(window *glfw.Window, console *nes.Console) {
 	turbo := console.PPU.Frame%6 < 3
-	k1 := readKeys(window, turbo)
+	k1 := readKeys1(window, turbo)
+	k2 := readKeys2(window, turbo)
 	j1 := readJoystick(glfw.Joystick1, turbo)
 	j2 := readJoystick(glfw.Joystick2, turbo)
 	console.SetButtons1(combineButtons(k1, j1))
-	console.SetButtons2(j2)
+	console.SetButtons2(combineButtons(k2, j2))
 }

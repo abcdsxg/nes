@@ -50,12 +50,23 @@ func readKey(window *glfw.Window, key glfw.Key) bool {
 	return window.GetKey(key) == glfw.Press
 }
 
-func readKeys(window *glfw.Window, turbo bool) [8]bool {
+func readKeys1(window *glfw.Window, turbo bool) [8]bool {
 	var result [8]bool
-	result[nes.ButtonA] = readKey(window, glfw.KeyZ) || (turbo && readKey(window, glfw.KeyA))
-	result[nes.ButtonB] = readKey(window, glfw.KeyX) || (turbo && readKey(window, glfw.KeyS))
+	result[nes.ButtonA] = readKey(window, glfw.KeyK)
+	result[nes.ButtonB] = readKey(window, glfw.KeyJ)
 	result[nes.ButtonSelect] = readKey(window, glfw.KeyRightShift)
 	result[nes.ButtonStart] = readKey(window, glfw.KeyEnter)
+	result[nes.ButtonUp] = readKey(window, glfw.KeyW)
+	result[nes.ButtonDown] = readKey(window, glfw.KeyS)
+	result[nes.ButtonLeft] = readKey(window, glfw.KeyA)
+	result[nes.ButtonRight] = readKey(window, glfw.KeyD)
+	return result
+}
+
+func readKeys2(window *glfw.Window, turbo bool) [8]bool {
+	var result [8]bool
+	result[nes.ButtonA] = readKey(window, glfw.KeyKP0)
+	result[nes.ButtonB] = readKey(window, glfw.KeyKP1)
 	result[nes.ButtonUp] = readKey(window, glfw.KeyUp)
 	result[nes.ButtonDown] = readKey(window, glfw.KeyDown)
 	result[nes.ButtonLeft] = readKey(window, glfw.KeyLeft)
@@ -76,11 +87,11 @@ func readJoystick(joy glfw.Joystick, turbo bool) [8]bool {
 		result[nes.ButtonB] = buttons[13] == 1 || (turbo && buttons[3] == 1)
 		result[nes.ButtonSelect] = buttons[0] == 1
 		result[nes.ButtonStart] = buttons[3] == 1
-		result[nes.ButtonUp] =  buttons[4] == 1 || axes[1] < -0.5
+		result[nes.ButtonUp] = buttons[4] == 1 || axes[1] < -0.5
 		result[nes.ButtonDown] = buttons[6] == 1 || axes[1] > 0.5
 		result[nes.ButtonLeft] = buttons[7] == 1 || axes[0] < -0.5
 		result[nes.ButtonRight] = buttons[5] == 1 || axes[0] > 0.5
-		return result		
+		return result
 	}
 	result[nes.ButtonA] = buttons[0] == 1 || (turbo && buttons[2] == 1)
 	result[nes.ButtonB] = buttons[1] == 1 || (turbo && buttons[3] == 1)
